@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    /* Language and Environment */
+    "target": "ES2020",                      // Target modern JS
+    "useDefineForClassFields": true,         // Aligns with ES2020 class fields
+    "lib": ["ES2020", "DOM", "DOM.Iterable"], // Include ES2020 and DOM APIs
+    "module": "ESNext",                      // ESNext modules for modern bundlers
+    "skipLibCheck": true,                    // Skip type checking of declaration files
+
+    /* Module Resolution */
+    "moduleResolution": "bundler",          // Use bundler-specific resolution
+    "allowImportingTsExtensions": true,     // Allow .ts and .tsx imports
+    "isolatedModules": true,                // One file per module restrictions
+    "moduleDetection": "force",             // Strictly enforce module syntax
+    "noEmit": true,                         // Do not emit output files
+    "jsx": "react-jsx",                     // Use React's JSX runtime
+
+    /* Linting Options */
+    "strict": true,                         // Enable strict mode
+    "noUnusedLocals": true,                 // Report unused variables
+    "noUnusedParameters": true,             // Report unused parameters
+    "noFallthroughCasesInSwitch": true,     // Prevent unhandled switch cases
+
+    /* Additional Options for Productivity */
+    "resolveJsonModule": true,              // Enable JSON imports
+    "esModuleInterop": true,                // Ensure compatibility with CommonJS modules
+    "forceConsistentCasingInFileNames": true // Enforce consistent file name casing
+  },
+  "include": ["src"],                        // Include the "src" folder
+  "exclude": ["node_modules", "dist"]        // Exclude these directories
+}
