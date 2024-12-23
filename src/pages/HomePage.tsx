@@ -15,7 +15,8 @@ export const HomePage = () => {
     const fetchTourPackages = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`${API_BASE_URL}/packages/`);
+        const response = await axios.get(`${API_BASE_URL}/packages`);
+        console.log('the response Data',response.data);
         setTourPackages(response.data);
       } catch (err) {
         setError("Failed to load tour packages. Please try again later.");

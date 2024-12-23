@@ -19,6 +19,7 @@ export interface TourPackage {
 }
 
 export interface Booking {
+  [x: string]: ReactNode;
   _id: string;
   packageId: string;
   packageTitle: string;

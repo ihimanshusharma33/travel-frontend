@@ -24,6 +24,7 @@ export const Footer = () => {
               <Link to="/packages" className="block text-gray-400 hover:text-white">Tour Packages</Link>
               <Link to="/about" className="block text-gray-400 hover:text-white">About Us</Link>
               <Link to="/contact" className="block text-gray-400 hover:text-white">Contact</Link>
+              <Link to="/admin" className="block text-gray-400 hover:text-white">Admin</Link>
             </div>
           </div>
 

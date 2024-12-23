@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Compass, Phone, Mail, Menu, X } from 'lucide-react';
+import { useState } from 'react';
+import { Compass, Phone, Mail, Menu, X, UsersIcon, User2Icon } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export const Navbar = () => {
@@ -16,19 +16,12 @@ export const Navbar = () => {
 
           <div className="hidden md:flex items-center gap-8">
             <Link to="/" className="text-gray-600 hover:text-indigo-600">Home</Link>
-            <Link to="/packages" className="text-gray-600 hover:text-indigo-600">Tour Packages</Link>
             <Link to="/about" className="text-gray-600 hover:text-indigo-600">About</Link>
             <Link to="/contact" className="text-gray-600 hover:text-indigo-600">Contact</Link>
           </div>
-
           <div className="hidden md:flex items-center gap-4">
             <div className="flex items-center gap-2 text-gray-600">
-              <Phone size={18} />
-              <span>+1 234 567 890</span>
-            </div>
-            <div className="flex items-center gap-2 text-gray-600">
-              <Mail size={18} />
-              <span>info@wanderlust.com</span>
+              <Link to="/profile"><User2Icon size={22} /></Link>
             </div>
           </div>
 
@@ -44,9 +37,11 @@ export const Navbar = () => {
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <Link to="/" className="block text-gray-900 hover:text-indigo-600">Home</Link>
-            <Link to="/packages" className="block text-gray-900 hover:text-indigo-600">Tour Packages</Link>
             <Link to="/about" className="block text-gray-900 hover:text-indigo-600">About</Link>
             <Link to="/contact" className="block text-gray-900 hover:text-indigo-600">Contact</Link>
+            <div className="flex items-center gap-2 text-gray-600">
+              <Link to="/profile"><User2Icon size={22} /></Link>
+            </div>
           </div>
         </div>
       )}
