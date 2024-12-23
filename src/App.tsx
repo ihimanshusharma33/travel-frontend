@@ -25,7 +25,7 @@ const App: React.FC = () => {
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/about" element={<About />} />
             <Route path="/admin/login" element={<AdminLogin />} />
-            <Route path="/admin" element={<ProtectRoute><AdminPanel /></ProtectRoute>} />
+            <Route path="/admin" element={<ProtectRoute admin><AdminPanel /></ProtectRoute>} />
             <Route path="/login" element={<LoginForm />} />
             <Route path="/register" element={<Register />} />
             <Route path="/profile" element={<ProtectRoute><Profile /></ProtectRoute>} />
