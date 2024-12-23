@@ -3,7 +3,7 @@ import { useEffect } from "react";
 
 interface ProtectRouteProps {
     children: React.ReactNode;
-    admin?: boolean; // Optional prop to indicate admin-only routes
+    admin?: boolean; 
 }
 
 export const ProtectRoute: React.FC<ProtectRouteProps> = ({ children, admin = false }) => {
@@ -11,7 +11,6 @@ export const ProtectRoute: React.FC<ProtectRouteProps> = ({ children, admin = fa
 
     useEffect(() => {
         const token = localStorage.getItem(admin ? "adminToken" : "token");
-
         if (!token) {
             navigate(admin ? "/admin/login" : "/login");
         }
