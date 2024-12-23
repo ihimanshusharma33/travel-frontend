@@ -41,12 +41,21 @@ const LoginForm = () => {
         if (err.response.status === 404) {
           setError("Wrong email or password. Please try again.");
           setLoading(false);
+          setTimeout(() => {
+            setError("");
+          }, 2000)
         } else if (err.response.status === 500) {
           setError("Server error. Please try again later.");
           setLoading(false);
+          setTimeout(() => {
+            setError("");
+          }, 2000)
         } else {
           setError(err.response.data?.message || "An unexpected error occurred.");
           setLoading(false);
+          setTimeout(() => {
+            setError("");
+          }, 2000)
         }
       } else if (err.request) {
         // Request was made but no response was received
@@ -56,20 +65,15 @@ const LoginForm = () => {
         // Something went wrong in setting up the request
         setError("An error occurred. Please try again.");
         setLoading(false);
+        setTimeout(() => {
+          setError("");
+        }, 2000)
       }
     }
   };
-  const disableError = () => {
-    setTimeout(() => {
-      setError("");
-    }, 2000)
-  }
-  useEffect(() => {
-    disableError();
-  }, [error])
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex items-center justify-center min-h-fit lg:min-h-screen bg-gray-100">
 
       {loading && <div className="fixed top-20 left-50 text-red-500 mb-4  border"><p className=" rounded-md bg-blue-500 text-white px-10 py-3">Please wait ...</p></div>}
       {error && <div className="fixed top-20 left-50 text-red-500 mb-4  border"><p className=" rounded-md bg-red-500 text-white px-10 py-3">{error}</p></div>}

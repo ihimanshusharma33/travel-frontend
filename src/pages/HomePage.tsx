@@ -53,8 +53,7 @@ export const HomePage = () => {
             >
               <TourCard
                 tour={tour}
-                onBookNow={(e) => {
-                  e.stopPropagation();
+                onBookNow={() => {
                   navigate(`/packages/${tour._id}`);
                 }}
               />
