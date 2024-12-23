@@ -20,13 +20,10 @@ const AdminLogin= () => {
         { username, password },
         { headers: { "Content-Type": "application/json" } }
       );
-
-      console.log(response);
-
       if (response.status === 200) {
         const token = response.data.token;
         localStorage.setItem('adminToken', token); 
-        localStorage.setItem('username', username); // Store the username
+        localStorage.setItem('username', username);
         navigate('/admin'); // Redirect to the admin dashboard
       } else if (response.status === 404) {
         setError("Wrong username or password. Please try again.");

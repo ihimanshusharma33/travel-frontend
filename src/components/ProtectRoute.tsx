@@ -10,7 +10,7 @@ export const ProtectRoute: React.FC<ProtectRouteProps> = ({ children, admin = fa
     const navigate = useNavigate();
 
     useEffect(() => {
-        const token = localStorage.getItem(admin ? "admintoken" : "token");
+        const token = localStorage.getItem(admin ? "adminToken" : "token");
 
         if (!token) {
             navigate(admin ? "/admin/login" : "/login");
