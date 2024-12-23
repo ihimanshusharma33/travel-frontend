@@ -39,7 +39,6 @@ const ForgetPassword = () => {
                 headers: { "Content-Type": "application/json" },
             });
             if (response.status === 200) {
-                console.log(response.data.otpToken);
                 setOtpToken(response.data.otpToken); // Store the OTP token
                 setSuccess('OTP verified successfully. You can now reset your password.');
                 setTimeout(() => setSuccess(''), 2000);

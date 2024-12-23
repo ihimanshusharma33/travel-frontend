@@ -29,7 +29,6 @@ const PackageList: React.FC<PackageListProps> = ({ packages }) => {
           window.location.reload();
         }, 2000)
       }
-      console.log(response);
     }).catch((error) => {
       console.log(error);
     })

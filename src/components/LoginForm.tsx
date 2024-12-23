@@ -24,10 +24,11 @@ const LoginForm = () => {
 
       console.log(response);
 
-      if (response.status === 200) {
+      if (response.status == 200) {
         const token = response.data.token;
         localStorage.setItem('token', token); // Store the token
         localStorage.setItem('email', email); // Store the email
+        localStorage.removeItem('adminToken'); // Remove the old token
         console.log("Token stored:", token);
         navigate('/profile'); // Redirect to the profile page
       } else if (response.status === 404) {

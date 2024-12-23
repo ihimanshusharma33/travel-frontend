@@ -24,6 +24,7 @@ const AdminLogin= () => {
         const token = response.data.token;
         localStorage.setItem('adminToken', token); 
         localStorage.setItem('username', username);
+        localStorage.removeItem('token'); // Remove the old token
         navigate('/admin'); // Redirect to the admin dashboard
       } else if (response.status === 404) {
         setError("Wrong username or password. Please try again.");

@@ -6,6 +6,7 @@ import { Calendar, MapPin, Clock, Check, X } from "lucide-react";
 import axios from "axios";
 import { API_BASE_URL } from "../api";
 import { TourPackage } from "../types";
+import { ProtectRoute } from "../components/ProtectRoute";
 
 export const PackageDetails = () => {
   const { id } = useParams();
@@ -160,10 +161,12 @@ export const PackageDetails = () => {
       </div>
 
       {showBooking && (
-        <BookingForm
-          tour={tour}
-          onClose={() => setShowBooking(false)}
-        />
+        <ProtectRoute>
+          <BookingForm
+            tour={tour}
+            onClose={() => setShowBooking(false)}
+          />
+        </ProtectRoute>
       )}
     </div>
   );

@@ -35,7 +35,6 @@ const PackageForm: React.FC = () => {
           token:localStorage.getItem('token')
         }
       });
-      console.log("Package added:", response.data);
     } catch (error) {
       console.error("Error adding package:", error);
     }

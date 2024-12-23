@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { X } from "lucide-react";
 import axios from "axios";
 import { TourPackage } from "../types";
@@ -33,6 +33,11 @@ export const BookingForm: React.FC<BookingFormProps> = ({ tour, onClose }) => {
         packageId: tour._id,
         packageTitle: tour.title,
         totalPrice: tour.price * formData.travelers,
+      },
+      {
+        headers:{ 
+          token: localStorage.getItem('token')
+        }
       });
 
       if (response.status === 201) {
@@ -52,6 +57,12 @@ export const BookingForm: React.FC<BookingFormProps> = ({ tour, onClose }) => {
       setIsSubmitting(false);
     }
   };
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      setError("Please login to book a tour");
+    }
+  })
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
